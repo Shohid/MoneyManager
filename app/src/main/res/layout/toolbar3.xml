@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/toolbar3"
+    android:layout_width="fill_parent"
+    android:layout_height="45.0dip"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@id/imageView2"
+        android:layout_width="30.0dip"
+        android:layout_height="20.0dip"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/back1" />
+
+    <TextView
+        android:id="@id/toolbar_title"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:layout_gravity=""
+        android:background="@color/colorPrimary"
+        android:paddingLeft="10.0dip"
+        android:paddingTop="10.0dip"
+        android:text="Money Exchange Data"
+        android:textColor="#ffffffff"
+        android:textSize="17.0dip"
+        android:textStyle="normal"
+        android:typeface="monospace" />
+</android.support.v7.widget.Toolbar>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+            z
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@id/chart55"
+                android:layout_width="fill_parent"
+                android:layout_height="190.0dip"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10.0dip" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@id/chartyear1"
+                android:layout_width="fill_parent"
+                android:layout_height="190.0dip"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="60.0dip" />
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@id/textView6"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="Large Text"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#ffffffff" />
+</RelativeLayout>

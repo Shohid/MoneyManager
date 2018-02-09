@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/custom_dialog_layout_design_user_input"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#ffe6cece"
+        android:paddingBottom="10dp"
+        android:orientation="horizontal"
+        android:layout_weight="0.11">
+
+        <TextView
+            android:id="@id/textView2"
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="10.0dip"
+            android:text="Set Total Budget"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="#ffffffff"
+            android:typeface="sans" />
+
+        <TextView
+            android:id="@id/textView3"
+            android:layout_width="fill_parent"
+            android:layout_height="25.0dip"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/textView2"
+            android:background="#ffd3d3d3"
+            android:gravity="center"
+            android:padding="3.0dip"
+            android:text="Reset budget and Begin new Expenditure"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="#ffff0000"
+            android:textSize="10.0dip" />
+
+        <EditText
+            android:id="@id/userInputDialog"
+            android:layout_width="130.0dip"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView3"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="14.0dip"
+            android:gravity="center"
+            android:hint="Enter amount"
+            android:inputType="number" />
+
+        <Button
+            android:id="@id/button3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/rect1"
+            android:drawablePadding="-12.0dip"
+            android:text="Save"
+            android:textColor="#ffffffff" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/dd"
+            android:layout_above="@+id/button3"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/date" />
+    </RelativeLayout>
+</LinearLayout>

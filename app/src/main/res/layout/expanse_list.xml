@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:background="@color/bgContent"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <!-- LEFT TITLE PART -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_weight="3"
+        android:background="@color/colorPrimary"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/title_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:textColor="@android:color/white"
+            android:textSize="26sp"
+            android:text="2017"/>
+
+        <TextView
+            android:id="@+id/title_time_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:textColor="@android:color/white"
+            android:text=""
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/title_date_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/title_time_label"
+            android:layout_alignParentStart="true"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+
+    </RelativeLayout>
+    <!-- RIGHT TITLE PART -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/bgTitleRight"
+        android:paddingBottom="20dp"
+        android:paddingEnd="20dp"
+        android:paddingStart="15dp"
+        android:paddingTop="20dp">
+
+        <ImageView
+            android:id="@+id/title_from_to_dots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/from_to_purple" />
+
+
+        <TextView
+            android:id="@+id/title_budget_count"
+            style="@style/TitleBadgeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:text="@string/price_mock"/>
+
+        <TextView
+            style="@style/TitleBadgeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/title_budget_count"
+            android:layout_alignStart="@id/title_budget_count"
+            android:text="Budget" />
+
+        <TextView
+            android:id="@+id/title_status"
+            style="@style/TitleBadgeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:text="less" />
+
+        <TextView
+            style="@style/TitleBadgeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/title_status"
+            android:text="Status"
+            android:layout_alignLeft="@+id/title_status"
+            android:layout_alignStart="@+id/title_status" />
+
+        <TextView
+            android:id="@+id/title_expanse"
+            style="@style/TitleBadgeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/price_mock"/>
+
+        <TextView
+            style="@style/TitleBadgeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/title_expanse"
+            android:layout_alignStart="@id/title_expanse"
+            android:text="Expanse" />
+
+        <TextView
+            android:id="@+id/title_from_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:text="@string/content_to2_mock"
+            android:layout_toRightOf="@+id/title_from_to_dots"
+            android:layout_toEndOf="@+id/title_from_to_dots"
+            android:layout_alignBottom="@+id/title_from_to_dots"
+            android:layout_alignParentTop="true" />
+
+    </RelativeLayout>
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <View
+            android:background="@color/separator_line"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_height="10dp"
+            android:layout_marginLeft="72dp"
+            android:layout_width="match_parent" />
+    </LinearLayout>
+</LinearLayout>

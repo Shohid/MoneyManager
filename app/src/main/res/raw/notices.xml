@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<notices>
+    <notice>
+        <name>1. TimeLine</name>
+        <!--<url>http://mintosoft.com/poketmanager/help/timeline</url>-->
+        <copyright>This activity will contain graphical representation of your expenditure till you reset your budget.</copyright>
+        <!--<license>Apache Software License 2.0</license>-->
+    </notice>
+    <notice>
+        <name>2. Reset Total Budget</name>
+        <!--<url>http://mintosoft.com/poketmanager/help/budget</url>-->
+
+        <copyright>This input box will Reset your budget and your old expenditure will be save in the form of monthly budget .</copyright>
+        <!--<license>Apache Software License 2.0</license>-->
+    </notice>
+    <notice>
+        <name>3. Update Budget</name>
+        <!--<url>http://mintosoft.com/poketmanager/help/update-budget</url>-->
+        <copyright>This input box will update your budget by adding given amount by you .</copyright>
+        <!--<license>Apache Software License 2.0</license>-->
+    </notice>
+    <notice>
+        <name>4. Money Exchange</name>
+        <!--<url>http://mintosoft.com/poketmanager/help/money-exchange</url>-->
+        <copyright>This will contain your lending and borrowing details.</copyright>
+        <!--<license>Apache Software License 2.0</license>-->
+
+    </notice>
+    <notice>
+        <name>5. Saving Account</name>
+        <!--<url>http://mintosoft.com/poketmanager/help/saving-account</url>-->
+        <copyright>This will contain your saving amount (Budget~Expenditure).</copyright>
+        <!--<license>Apache Software License 2.0</license>-->
+    </notice>
+    <notice>
+        <name>6. Backup and Restore</name>
+        <!--<url>http://mintosoft.com/poketmanager/help/backup-restore</url>-->
+
+        <copyright>This will backup your data in sd card with file name pocketmoney_database.db and then you can restore it.</copyright>
+        <!--<license>Apache Software License 2.0</license>-->
+    </notice>
+
+</notices>

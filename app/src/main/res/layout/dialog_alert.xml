@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="1.0">
+
+    <TextView
+        android:id="@id/textView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.38"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:padding="30.0dip"
+        android:text="Are you SURE !!!"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#ffffffff"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@id/textView3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.26"
+        android:background="@color/material_grey_850"
+        android:gravity="center"
+        android:padding="8.0dip"
+        android:text="Clear all your expenses"
+        android:textColor="@color/abc_secondary_text_material_dark"
+        android:textSize="12.0dip"
+        android:textStyle="italic" />
+</LinearLayout>

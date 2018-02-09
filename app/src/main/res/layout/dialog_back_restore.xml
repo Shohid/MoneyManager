@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@id/custom_dialog_layout_design_user_input"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/transparent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="290.0dip"
+        android:layout_height="200.0dip"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@id/relativeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="200.0dip"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#ffe6cece"
+            android:orientation="horizontal"
+            android:padding="40.0dip">
+
+            <Button
+                android:id="@id/button_restore"
+                android:layout_width="130.0dip"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/button_backup"
+                android:background="@drawable/rect1"
+                android:text="RESTORE"
+                android:textColor="#ffffffff" />
+
+            <Button
+                android:id="@id/button_backup"
+                android:layout_width="130.0dip"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/rect1"
+                android:text="Back UP"
+                android:textColor="#ffffffff" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

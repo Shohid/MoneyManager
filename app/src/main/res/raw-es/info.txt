@@ -1,0 +1,9 @@
+<h3>Poket Manager</h3>
+Version 1.0<br>
+Copyright © 2017<br>
+<b>mintosoft.com</b>
+
+
+
+
+

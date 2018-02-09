@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffe6e6fa"
+    android:orientation="vertical"
+    android:padding="10.0dip">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:background="@drawable/customborder"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="290.0dip"
+            android:layout_height="100.0dip"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="4.0dip">
+
+            <TextView
+                android:id="@id/currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="BDT"
+                android:typeface="monospace"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textSize="25.0dip" />
+
+            <TextView
+                android:id="@id/note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:text="Note : "
+                android:textSize="25.0dip"
+                android:typeface="monospace" />
+
+            <TextView
+                android:id="@id/place"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/note"
+                android:layout_toRightOf="@id/note"
+                android:text="Motorola"
+                android:typeface="monospace"
+                android:textSize="20.0dip" />
+
+            <TextView
+                android:id="@id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="monospace"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/amount"
+                android:text="New Text" />
+
+            <TextView
+                android:id="@id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5265"
+                android:typeface="monospace"
+                android:textSize="25.0dip"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/currency"
+                android:layout_toEndOf="@+id/currency" />
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <View
+        android:background="@color/separator_line"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="72dp"
+        android:layout_width="match_parent" />
+</LinearLayout>

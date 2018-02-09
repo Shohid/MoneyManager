@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "245901568460",
+    "firebase_url": "https://money-manager-5e02b.firebaseio.com",
+    "project_id": "money-manager-5e02b",
+    "storage_bucket": "money-manager-5e02b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245901568460:android:f30b02ca301e24be",
+        "android_client_info": {
+          "package_name": "com.mintosoft.moneymanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "245901568460-rpeak0mq4v90mm2o74laalv6irjlri57.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mintosoft.moneymanager",
+            "certificate_hash": "eea7bed2e3433a5c1bc4d7469dd2c745cf46aa22"
+          }
+        },
+        {
+          "client_id": "245901568460-2o7092a2lb1ert3l9gk813v5s4t0qa6e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn2dBFS_KOQSTlDFFHCK58CZh5nSOZDfg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "245901568460-2o7092a2lb1ert3l9gk813v5s4t0qa6e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

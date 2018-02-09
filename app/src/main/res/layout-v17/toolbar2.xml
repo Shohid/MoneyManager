@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/toolbar"
+    android:layout_width="fill_parent"
+    android:layout_height="40.0dip"
+    android:background="@color/colorPrimary"
+    android:minHeight="?actionBarSize"
+    android:weightSum="1.0">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="Expenses View"
+            android:textColor="#ffffffff"
+            android:typeface="monospace"
+            android:textSize="17.0dip"
+            android:textStyle="normal" />
+    </RelativeLayout>
+</android.support.v7.widget.Toolbar>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#fffaebd7"
+    android:orientation="vertical"
+    android:padding="10.0dip">
+
+    <TextView
+        android:id="@id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@id/type"
+        android:text="Marshmallow"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="85.0dip"
+        android:text="Android 6.0"
+        android:textColor="@android:color/black" />
+
+    <ImageView
+        android:id="@id/item_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/timer2" />
+</RelativeLayout>

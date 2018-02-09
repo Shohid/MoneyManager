@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <android.support.v7.widget.CardView android:layout_gravity="left" android:id="@id/card_view" android:layout_width="fill_parent" android:layout_height="150.0dip" android:layout_margin="@dimen/card_margin">
+            <TextView android:textSize="15.0dip" android:typeface="monospace" android:id="@id/t1" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1. TIMELINE \nThis activity will contain graphical representation of your expenditure till you reset your budget." />
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView android:layout_gravity="left" android:id="@id/card_view_1" android:layout_width="fill_parent" android:layout_height="150.0dip" android:layout_margin="@dimen/card_margin">
+            <TextView android:textSize="15.0dip" android:typeface="monospace" android:id="@id/t2" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2. RESET TOTAL BUDGET \nThis input box will Reset your budget and your old expenditure will be save in the form of monthly budget ." />
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView android:layout_gravity="left" android:id="@id/card_view_2" android:layout_width="fill_parent" android:layout_height="150.0dip" android:layout_margin="@dimen/card_margin">
+            <TextView android:textSize="15.0dip" android:typeface="monospace" android:id="@id/t3" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="3. Update Budget \nThis input box will update your budget by adding given amount by you ." />
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView android:layout_gravity="left" android:id="@id/card_view_3" android:layout_width="fill_parent" android:layout_height="150.0dip" android:layout_margin="@dimen/card_margin">
+            <TextView android:textSize="15.0dip" android:typeface="monospace" android:id="@id/t4" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4. MONEY EXCHANGE \nThis will contain your lending and borrowing details." />
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView android:layout_gravity="left" android:id="@id/card_view_4" android:layout_width="fill_parent" android:layout_height="130.0dip" android:layout_margin="@dimen/card_margin">
+            <TextView android:textSize="15.0dip" android:typeface="monospace" android:id="@id/t5" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="5. SAVING ACCOUNT \nThis will contain your saving amount (Budget~Expenditure)." />
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView android:layout_gravity="left" android:id="@id/card_view_5" android:layout_width="fill_parent" android:layout_height="150.0dip" android:layout_margin="@dimen/card_margin">
+            <TextView android:textSize="15.0dip" android:typeface="monospace" android:id="@id/t6" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="6. BACKUP AND RESTORE \nThis will backup your data in sd card with file name magicbox_database.db and then you can restore it." />
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</ScrollView>

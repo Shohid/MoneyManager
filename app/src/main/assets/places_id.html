@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+  	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true&libraries=places&language=id"></script>
+    <script type='text/javascript'>
+    
+      var result="";
+      var resul="";
+	  var lengt = 0;
+	  var kWords="";
+      var latitude=0;
+      var longitude=0;
+      var radius=0;
+      var mosques_info = new Array();
+      var mosques_lat = new Array();
+      var mosques_lng = new Array();
+      var mosques_info2 = new Array();
+      var mosques_lat2 = new Array();
+      var mosques_lng2 = new Array();
+      var oneDest=false;
+      var current_index=0;
+      var time;
+      var directionsService = new google.maps.DirectionsService();
+      var done;
+      var data;
+      
+      
+      function msg(toast) {
+          Android.msg(toast);
+      }
+      
+      function initialize(lat,lng,rad,mode,keywords) {
+    	
+    	latitude=lat;
+    	longitude=lng;
+    	radius=rad;
+        var pyrmont = new google.maps.LatLng(lat, lng);
+        var map = new google.maps.Map(document.getElementById('map'), {
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          center: pyrmont,
+          zoom: 1
+        });
+        kWords =keywords;
+       	//var words=['مسجد|המסגד|جامع|masjid|mesjid|mosque'+keywords];
+       	//var tem = ['mosquee','mosquée','masjid','mosque'];
+       	//var request2 = {location: pyrmont,keyword: words,rankBy: google.maps.places.RankBy.DISTANCE};
+        var request2 = {location: pyrmont,type: ['mosque'],radius:50000};
+       	var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch(request2, callback2);
+        start= new Date().getTime();
+        
+      }
+      
+      function callback2(results2, status) {
+	  //alert("calback2"+results2.length);
+          if (status == google.maps.places.PlacesServiceStatus.OK && results2!=null && results2.length>0) {
+		  lengt = (results2.length);
+		  //alert("lengt2 :"+lengt);
+            for (var i = 0; i < results2.length; i++) {
+          	  var types="";
+          	  if(results2[i]!=null && results2[i].types!=null)
+          	  {
+  	        	  for(var j=0;j<results2[i].types.length;j++)
+  	        	  {
+  	        		  types=types+";"+results2[i].types[j];
+  	        	  }
+          	  }
+          	  else
+          		  types=";establishment"
+          	  result=results2.length-1-i+";"+results2[i].name+";"+results2[i].geometry.location.lat()+";"+results2[i].geometry.location.lng()+types;
+          	  mosques_info2[i]=result;
+          	  mosques_lat2[i]=results2[i].geometry.location.lat();
+          	  mosques_lng2[i]=results2[i].geometry.location.lng();
+          	  
+          		  
+            }
+		  //calculateDistances();            
+          }
+          var words=[kWords+'|مسجد|המסגד|جامع|masjid|mesjid'];
+		  //Android.test("words: "+kWords+'|مسجد|המסגד|جامع|masjid|mesjid');
+ 		    var pyrmont2 = new google.maps.LatLng(latitude, longitude);
+ 			 var map2 = new google.maps.Map(document.getElementById('map'), {
+ 			  mapTypeId: google.maps.MapTypeId.ROADMAP,
+ 			  center: pyrmont2,
+ 			  zoom: 1
+ 			});
+			var request = {location: pyrmont2,name: words,rankBy: google.maps.places.RankBy.DISTANCE};
+            var service2 = new google.maps.places.PlacesService(map2);
+             service2.nearbySearch(request, callback);
+          
+         
+//           else
+//           	Android.NoMosqueFound();
+        }
+      
+      function calculateDistances() {
+          var service = new google.maps.DistanceMatrixService();
+          var dests=new Array();
+          //Android.test("size mosques_info : "+mosques_info2.length+"size mosques_lat2 : "+mosques_lat2.length+"size mosques_lng2 : "+mosques_lng2.length);
+          for(var i=0;i<mosques_info2.length; i++)
+          {
+        	  //Android.test(mosques_info2[i]);
+        	  dests[i]=new google.maps.LatLng(mosques_lat2[i], mosques_lng2[i]);
+          };
+       	  service.getDistanceMatrix(
+       	            {
+       	              origins: [new google.maps.LatLng(latitude,longitude)],
+       	              destinations: dests,
+       	              travelMode: google.maps.TravelMode.WALKING,
+       	              unitSystem: google.maps.UnitSystem.METRIC,
+       	              avoidHighways: false,
+       	              avoidTolls: false
+       	            }, callback_distance);
+          
+        }
+      
+      function calculateDistances2() {
+          var service = new google.maps.DistanceMatrixService();
+          var dests=new Array();
+          //Android.test("size mosques_info : "+mosques_info.length+"size mosques_lat : "+mosques_lat.length+"size mosques_lng : "+mosques_lng.length);
+          for(var i=0;i<mosques_info.length; i++)
+          {
+        	  //Android.test(mosques_info[i]);
+        	  dests[i]=new google.maps.LatLng(mosques_lat[i], mosques_lng[i]);
+          };
+       	  service.getDistanceMatrix(
+       	            {
+       	              origins: [new google.maps.LatLng(latitude,longitude)],
+       	              destinations: dests,
+       	              travelMode: google.maps.TravelMode.WALKING,
+       	              unitSystem: google.maps.UnitSystem.METRIC,
+       	              avoidHighways: false,
+       	              avoidTolls: false
+       	            }, callback_distance2);
+          
+        }
+      
+      function calculate(lat,lng,mosque_lat,mosque_lng,mode) {
+          var service = new google.maps.DistanceMatrixService();
+
+		  var tvMode;
+		  if(mode=="w")
+			  tvMode=google.maps.TravelMode.WALKING;
+		  else if(mode=="c")
+			  tvMode=google.maps.TravelMode.DRIVING;
+		  else if(mode=="b")
+			  tvMode=google.maps.TravelMode.BICYCLING;
+		  
+          oneDest=true;
+       	  service.getDistanceMatrix(
+       	            {
+       	              origins: [new google.maps.LatLng(lat,lng)],
+       	              destinations: [new google.maps.LatLng(mosque_lat, mosque_lng)],
+       	              travelMode: tvMode,
+       	              unitSystem: google.maps.UnitSystem.METRIC,
+       	              avoidHighways: false,
+       	              avoidTolls: false
+       	            }, callback_dist);
+          
+        }
+   	
+      function callback_distance(results, status)
+      {
+    	  //Android.test("callback_distance"+(status == google.maps.DistanceMatrixStatus.OK));
+    	  if (status == google.maps.DistanceMatrixStatus.OK) {
+
+     	      	var res = results.rows[0].elements;
+     	      	var nbr_mosques=0;
+     	      	for (var j = 0; j < res.length; j++) {
+     	           var element = res[j];
+     	           if(element!=null){
+	     	           var distance = '----';
+	    	           var duration = '----';
+	     	           if(element.distance!=null &&  element.duration!=null){
+		     	           distance = element.distance.text;
+		     	           duration = element.duration.text;
+	     	           } 
+	     	           if(!oneDest)
+	     	           {
+	     	        	    //Android.test("addMosque: "+distance+";"+duration+";"+mosques_info2[j]);
+	     	           		Android.addMosque(distance+";"+duration+";"+mosques_info2[j]);
+	     	           }
+	     	           else
+	     	           {
+	     	        	  Android.refreshDistanceAndDuration(distance,duration);
+	     	        	  oneDest=false;
+	     	           }
+     	           }
+     	         }
+     	      	calculateDistances2();
+
+      	 }
+      }
+      
+      function callback_distance2(results, status)
+      {
+    	  //Android.test("callback_distance"+(status == google.maps.DistanceMatrixStatus.OK));
+    	  if (status == google.maps.DistanceMatrixStatus.OK) {
+
+     	      	var res = results.rows[0].elements;
+     	      	var nbr_mosques=0;
+     	      	for (var j = 0; j < res.length; j++) {
+     	           var element = res[j];
+     	           if(element!=null){
+	     	           var distance = '----';
+	    	           var duration = '----';
+	     	           if(element.distance!=null &&  element.duration!=null){
+		     	           distance = element.distance.text;
+		     	           duration = element.duration.text;
+	     	           } 
+	     	           if(!oneDest)
+	     	           {
+	     	        	    //Android.test("addMosque: "+distance+";"+duration+";"+mosques_info[j]);
+	     	           		Android.addMosque(distance+";"+duration+";"+mosques_info[j]);
+	     	           }
+	     	           else
+	     	           {
+	     	        	  Android.refreshDistanceAndDuration(distance,duration);
+	     	        	  oneDest=false;
+	     	           }
+     	           }
+     	         }
+
+      	 }
+      }
+      
+      
+      function callback_dist(results, status)
+      {
+    	  if (status == google.maps.DistanceMatrixStatus.OK) {
+
+     	           var res = results.rows[0].elements;
+     	           var element = res[0];
+     	           if(element!=null){
+     	        	   var distance = '----';
+	    	           var duration = '----';
+	     	           if(element.distance!=null &&  element.duration!=null){
+		     	           distance = element.distance.text;
+		     	           duration = element.duration.text;
+	     	           } 
+	     	           Android.refreshDistanceAndDuration(distance,duration);
+     	           }
+     	         }
+      }
+      
+      function callback(results, status) {
+	  alert("lengt"+lengt);
+	  alert("calback"+results.length);
+	  
+        if (status == google.maps.places.PlacesServiceStatus.OK && results!=null && results.length>0) {
+          for (var i = 0; i < results.length; i++) {
+        	  var types="";
+        	  if(results[i]!=null && results[i].types!=null)
+        	  {
+	        	  for(var j=0;j<results[i].types.length;j++)
+	        	  {
+	        		  types=types+";"+results[i].types[j];
+	        	  }
+        	  }
+        	  else
+        		  types=";establishment"
+        	  resul=results.length-1-i+";"+results[i].name+";"+results[i].geometry.location.lat()+";"+results[i].geometry.location.lng()+types;
+        	  mosques_info[i]=resul;
+        	  mosques_lat[i]=results[i].geometry.location.lat();
+        	  mosques_lng[i]=results[i].geometry.location.lng();
+        		  
+          }
+		  alert("size"+mosques_info.length);
+          
+        }
+        else if(lengt==0){
+        	Android.NoMosqueFound();
+        }
+        calculateDistances();
+        
+      }
+      
+      function calcRoute(orig,dest,mode) {
+
+    	  var m='WALKING';
+    	  if(mode=='c')
+    		  m='DRIVING';
+    	 if(mode=='b')
+    		 m='BICYCLING';
+    	  var request = {
+    	      origin: orig,
+    	      destination: dest,
+    	      travelMode: google.maps.TravelMode[m]
+    	  };
+    	  directionsService.route(request, function(response, status) {
+    	    if (status == google.maps.DirectionsStatus.OK) 
+			{
+    	    	var points=response.routes[0].overview_path;
+    	    	if(points==0)
+    	    		Android.routeNotFound(orig,dest,mode);
+    	    	else
+    	    	{
+//     	    		if(points.length<300)
+//     	    		{
+    	    			for(var i=0;i<points.length;i++)
+    	    	    	{
+    	    	    		var done=(points.length-1-i);
+    	    	    		var data=points[i].lat()+";"+points[i].lng();
+    	    	    		(function(){Android.traceRoute(data+";"+done,mode);})();
+    	    	    	}
+//     	    		}
+//     	    		else
+//     	    		{
+//     	    			for(var i=0;i<points.length;i++)
+//     	    	    	{
+//     	    	    		var done=(points.length-1-i);
+//     	    	    		var data=points[i].lat()+";"+points[i].lng();
+//     	    	    		alert("traceRoute"+"/;/"+data+";"+done+"/;/"+mode);
+//     	    	    	}
+//     	    		}
+	    	    	
+				}
+    	    	
+    	    }
+    	    else
+    	    {
+    	    	Android.routeNotFound(orig,dest,mode);
+    	    }
+    	    
+    	  });
+    	}
+    </script> 
+  </head> 
+<!--   onload="javascript:initialize(33.92857,-6.891201,500,'Auto','');" -->
+<!-- onload="javascript:calcRoute('33.92857,-6.891201','33.92886,-6.894318','WALKING');" -->
+  <body> 
+    <div id="map" style="width: 0px;height: 0px"></div> 
+  </body> 
+</html> 
