@@ -4,7 +4,7 @@ Project  Name: Money Manager App for keeping your money expenses within your bud
 
 Year : 2017
 
-Project type: A Simple University project.
+Project type: A Simple Android apps.
 
 Tools Used:  Android , Java, Android  Studio
 
